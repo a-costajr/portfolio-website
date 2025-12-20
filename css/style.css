@@ -1,0 +1,110 @@
+:root {
+  --bg: #0b1220;
+  --panel: #0f1a30;
+  --text: #e5e7eb;
+  --muted: #a7b0c0;
+  --accent: #38bdf8;
+  --border: rgba(255,255,255,0.08);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 980px; margin: 0 auto; padding: 24px; }
+
+.header {
+  display: grid;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(11,18,32,0.85);
+  z-index: 5;
+}
+
+.hero { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.heroLinks { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.nav { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.section { padding: 22px 0; }
+.sectionHeader { margin-bottom: 12px; }
+.sectionHeader h2 { margin: 0 0 6px 0; }
+.muted { color: var(--muted); }
+
+.button {
+  display: inline-block;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  border-radius: 10px;
+}
+.button:hover { border-color: rgba(56,189,248,0.6); text-decoration: none; }
+
+.stack { display: grid; gap: 14px; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.subsection { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+.subsection h4 { margin: 0 0 10px 0; }
+
+.grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.miniCard {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+}
+.miniCard h5 { margin: 0 0 6px 0; }
+
+.cardLinks { margin-top: 10px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+.inlineLinks { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.dot { color: var(--muted); }
+
+.twoColList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 6px 18px;
+  padding-left: 18px;
+}
+
+.role { margin-top: 12px; }
+.roleTop { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+.contactList { list-style: none; padding: 0; margin: 0; }
+.contactList li { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.contactList li:last-child { border-bottom: none; }
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  padding-bottom: 40px;
+}
+
+/* Fix nested card layout inside Education */
+.card .grid {
+  margin-top: 18px;
+}
